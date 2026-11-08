@@ -21,3 +21,34 @@
   object-fit: contain;
   display: block;
 }
+/* Responsive Pathshala video gallery */
+.pathshala-videos {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid #594827;
+}
+
+.video-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 850px) {
+  .pathshala-videos {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
