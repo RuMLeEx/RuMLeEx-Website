@@ -68,9 +68,11 @@
   text-decoration: none;
 }
 .safar-episode img {
-  display: block;
-  width: 42%;
+    display: block;
+  flex: 0 0 44%;
+  width: 44%;
   max-width: 280px;
+  min-width: 0;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border: 1px solid #594827;
@@ -98,4 +100,14 @@
   .safar-episode { gap: 12px; }
   .safar-episode img { width: 44%; }
   .safar-episode strong { font-size: 18px; }
+}
+.safar-episode {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.safar-episode span {
+  min-width: 0;
+  overflow-wrap: break-word;
 }
