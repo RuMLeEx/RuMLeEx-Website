@@ -74,20 +74,6 @@
 }
 
 @media (max-width: 600px) {
-.safar-episode img {
-  display: block;
-  width: 280px;
-  height: 158px;
-  flex: 0 0 280px;
-  object-fit: cover;
-  border: 1px solid #594827;
-}
-    width: 40%;
-    height: auto;
-    flex: 0 0 40%;
-    aspect-ratio: 16 / 9;
-  }
-}
 .safar-episode span {
   display: block;
   flex: 1;
