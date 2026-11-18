@@ -316,3 +316,82 @@
     gap: 20px !important;
   }
 }
+
+
+/* SAFAR — systematic episode layout */
+#safar .feature-grid { margin-bottom: 58px; }
+#safar .safar-episodes {
+  width: 100%;
+  padding: 30px;
+  border: 1px solid #403522;
+  background: linear-gradient(135deg, #15120d, #0b0b0a 70%);
+}
+#safar .safar-episodes h3 {
+  margin: 8px 0 18px;
+  font: 500 25px/1.25 "Playfair Display", serif;
+}
+#safar .safar-episodes .video-frame {
+  width: min(100%, 640px);
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+#safar .safar-archive {
+  margin-top: 42px;
+  padding-top: 25px;
+  border-top: 1px solid #594827;
+}
+#safar .safar-archive-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+#safar .safar-archive-heading .eyebrow { margin: 0; }
+#safar .safar-archive-heading > span {
+  color: #82796a;
+  font-size: 8px;
+  letter-spacing: .16em;
+  text-align: right;
+}
+#safar .safar-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+#safar .safar-episode {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: 0;
+  min-width: 0;
+  padding: 0;
+  border: 1px solid #403522;
+  background: #0b0b0a;
+}
+#safar .safar-episode img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  flex: none;
+  object-fit: cover;
+  border: 0;
+}
+#safar .safar-episode span {
+  padding: 15px 17px 17px;
+}
+#safar .safar-episode strong {
+  margin: 0 0 7px;
+  font-size: 20px;
+}
+#safar .safar-episode small { font-size: 11px; }
+@media (max-width: 850px) {
+  #safar .feature-grid { margin-bottom: 38px; }
+  #safar .safar-episodes { padding: 20px; }
+  #safar .safar-archive-grid { grid-template-columns: 1fr; gap: 15px; }
+}
+@media (max-width: 480px) {
+  #safar .safar-archive-heading { align-items: flex-start; flex-direction: column; }
+  #safar .safar-archive-heading > span { text-align: left; }
+  #safar .safar-episodes { padding: 16px; }
+}
