@@ -103,11 +103,7 @@
 .safar-episode:hover small {
   color: #d6b15d;
 }
-@media (max-width: 600px) {
-  .safar-episode { gap: 12px; }
-  .safar-episode img { width: 44%; }
-  .safar-episode strong { font-size: 18px; }
-}
+
 .safar-episode {
   display: flex;
   flex-wrap: nowrap;
