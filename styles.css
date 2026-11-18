@@ -31,14 +31,11 @@
   margin-top: 8px;
 }
 
-.video-frame {
-  position: relative;
-  width: 100%;
+.safar-episodes .video-frame {
+  width: 280px;
+  max-width: 100%;
   aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border: 1px solid #594827;
 }
-
 .video-frame iframe {
   display: block;
   width: 100%;
@@ -77,7 +74,14 @@
 }
 
 @media (max-width: 600px) {
-  .safar-episode img {
+.safar-episode img {
+  display: block;
+  width: 280px;
+  height: 158px;
+  flex: 0 0 280px;
+  object-fit: cover;
+  border: 1px solid #594827;
+}
     width: 40%;
     height: auto;
     flex: 0 0 40%;
