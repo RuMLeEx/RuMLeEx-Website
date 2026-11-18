@@ -257,3 +257,62 @@
     padding: 15px 16px;
   }
 }
+
+
+/* Explicitly separate each Pathshala episode card and its caption */
+#pathshala .pathshala-videos {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 28px !important;
+  align-items: start !important;
+}
+#pathshala .pathshala-videos > a.episode-card {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  white-space: normal !important;
+  border: 1px solid #594827 !important;
+  background: #11100e !important;
+  line-height: 1.5 !important;
+}
+#pathshala .pathshala-videos > a.episode-card > img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover !important;
+}
+#pathshala .pathshala-videos > a.episode-card > .episode-card-copy {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 18px 20px !important;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+#pathshala .pathshala-videos > a.episode-card > .episode-card-copy small,
+#pathshala .pathshala-videos > a.episode-card > .episode-card-copy strong,
+#pathshala .pathshala-videos > a.episode-card > .episode-card-copy > span {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 0 9px !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  line-height: 1.5 !important;
+}
+#pathshala .pathshala-videos > a.episode-card > .episode-card-copy strong {
+  font-size: clamp(18px, 2vw, 25px) !important;
+  line-height: 1.25 !important;
+}
+@media (max-width: 850px) {
+  #pathshala .pathshala-videos {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 20px !important;
+  }
+}
