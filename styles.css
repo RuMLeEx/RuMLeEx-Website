@@ -500,3 +500,76 @@
   #safar .safar-archive > .safar-block-heading { flex-direction: column; align-items: flex-start; }
   #safar .safar-episodes { padding: 16px; }
 }
+
+
+/* SAFAR balance pass: full-width featured player + matching archive cards */
+#safar .safar-episodes {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 18px !important;
+  width: 100% !important;
+  padding: clamp(18px, 3vw, 30px) !important;
+  border: 1px solid #594827 !important;
+  background: linear-gradient(135deg, #17130d, #0b0b0a 75%) !important;
+}
+#safar .safar-episodes .safar-block-heading {
+  display: block !important;
+  width: 100% !important;
+}
+#safar .safar-episodes .video-frame {
+  display: block !important;
+  width: 100% !important;
+  max-width: 900px !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: 0 auto !important;
+}
+#safar .safar-episodes .video-frame iframe {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+#safar .safar-archive-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  gap: 22px !important;
+}
+#safar .safar-archive-grid > a.safar-episode {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid #594827 !important;
+  background: #0b0b0a !important;
+}
+#safar .safar-archive-grid > a.safar-episode > img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover !important;
+  flex: none !important;
+}
+#safar .safar-archive-grid > a.safar-episode > span {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 16px 18px !important;
+}
+#safar .safar-archive-grid > a.safar-episode strong,
+#safar .safar-archive-grid > a.safar-episode small {
+  display: block !important;
+  margin: 0 0 8px !important;
+  line-height: 1.45 !important;
+}
+@media (max-width: 850px) {
+  #safar .safar-archive-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  #safar .safar-episodes { padding: 18px !important; }
+}
