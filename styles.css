@@ -1036,3 +1036,182 @@
   .safar-block-heading { align-items: flex-start; flex-direction: column; }
   #pathshala .guest-intro > div { grid-template-columns: 100px 1fr; }
 }
+
+
+/* FINAL DIRECTION: identical layout and styling for both RuMLeEx pillars */
+#safar.series-section,
+#pathshala.series-section {
+  background: #090909 !important;
+  border: 0 !important;
+  padding-top: clamp(64px, 8vw, 104px) !important;
+  padding-bottom: clamp(72px, 9vw, 112px) !important;
+}
+#safar .series-hero,
+#pathshala .series-hero,
+#pathshala .pathshala-hero {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr) !important;
+  gap: clamp(30px, 6vw, 82px) !important;
+  align-items: center !important;
+  margin: 34px 0 68px !important;
+}
+#safar .series-visual,
+#pathshala .guest-intro {
+  min-height: 430px !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  padding: 34px !important;
+  border: 1px solid #594827 !important;
+  background: radial-gradient(ellipse at 50% 45%, #4c371b, #17120b 47%, #090908 78%) !important;
+}
+#safar .series-visual::before,
+#safar .series-visual::after,
+#pathshala .guest-intro::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 48% !important;
+  width: min(78%, 430px) !important;
+  aspect-ratio: 1 !important;
+  border: 1px solid #c8a45a55 !important;
+  border-radius: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none !important;
+}
+#safar .series-visual::after { width: min(98%, 540px) !important; opacity: .45 !important; }
+#pathshala .guest-intro::before { content: none !important; }
+#pathshala .guest-intro > .eyebrow { display: block !important; position: relative; z-index: 1; }
+#pathshala .guest-intro h3,
+#pathshala .guest-intro > div { position: relative; z-index: 1; width: 100%; }
+#pathshala .guest-intro h3 { align-self: flex-start; }
+#pathshala .guest-intro > div { display: grid !important; grid-template-columns: 112px 1fr !important; }
+#safar .focus-heading,
+#pathshala .focus-heading {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 8vw !important;
+  align-items: end !important;
+  margin: 0 0 28px !important;
+}
+#safar .focus-list,
+#pathshala .learning-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  border-top: 1px solid #403522 !important;
+  border-left: 0 !important;
+}
+#safar .focus-list article,
+#pathshala .learning-grid article {
+  display: grid !important;
+  grid-template-columns: minmax(145px, .85fr) 1.15fr !important;
+  align-items: center !important;
+  justify-content: initial !important;
+  gap: 18px !important;
+  min-height: 0 !important;
+  padding: 22px 8px !important;
+  border: 0 !important;
+  border-bottom: 1px solid #403522 !important;
+  background: transparent !important;
+}
+#safar .focus-list h4,
+#pathshala .learning-grid h4 {
+  margin: 0 !important;
+  color: #d6b15d !important;
+  font: 600 clamp(18px, 2vw, 24px)/1.25 "Playfair Display", serif !important;
+}
+#safar .focus-list p,
+#pathshala .learning-grid p {
+  margin: 0 !important;
+  color: #c0b9ad !important;
+  font-size: 12px !important;
+  line-height: 1.75 !important;
+}
+#safar .safar-focus-note {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 35px !important;
+  align-items: center !important;
+  margin: 48px 0 10px !important;
+  padding: 32px 7% !important;
+  border: 1px solid #594827 !important;
+  background: #11100e !important;
+  color: #f4f0e8 !important;
+}
+#safar .safar-focus-note p { color: #e2c77f !important; }
+#safar .safar-focus-note span { color: #c0b9ad !important; }
+#safar .safar-archive-grid,
+#pathshala .pathshala-videos {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+}
+#safar .safar-archive-grid > .safar-episode,
+#pathshala .pathshala-videos > .episode-card {
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  border: 1px solid #403522 !important;
+  background: #11100e !important;
+  transition: transform .25s ease, border-color .25s ease !important;
+}
+#safar .safar-archive-grid > .safar-episode:hover,
+#pathshala .pathshala-videos > .episode-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #c8a45a !important;
+}
+#safar .safar-archive-grid > .safar-episode img,
+#pathshala .pathshala-videos > .episode-card img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover !important;
+}
+#safar .safar-archive-grid > .safar-episode span,
+#pathshala .episode-card-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  width: 100% !important;
+  min-height: 124px !important;
+  padding: 18px !important;
+}
+#safar .safar-archive-grid > .safar-episode strong,
+#pathshala .episode-card-copy strong {
+  display: block !important;
+  margin: 0 !important;
+  color: #f4f0e8 !important;
+  font: 500 20px/1.3 "Playfair Display", serif !important;
+}
+#safar .safar-archive-grid > .safar-episode small,
+#pathshala .episode-card-copy small,
+#pathshala .episode-card-copy > span {
+  color: #aaa397 !important;
+  font-size: 11px !important;
+}
+@media (max-width: 850px) {
+  #safar .series-hero,
+  #pathshala .series-hero,
+  #pathshala .pathshala-hero { grid-template-columns: 1fr !important; gap: 30px !important; }
+  #safar .focus-heading,
+  #pathshala .focus-heading,
+  #safar .safar-focus-note { grid-template-columns: 1fr !important; gap: 18px !important; }
+  #safar .focus-list,
+  #pathshala .learning-grid { grid-template-columns: 1fr !important; }
+  #safar .safar-archive-grid,
+  #pathshala .pathshala-videos { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 520px) {
+  #safar .series-visual,
+  #pathshala .guest-intro { min-height: 290px !important; }
+  #safar .focus-list article,
+  #pathshala .learning-grid article { grid-template-columns: 1fr !important; gap: 7px !important; padding: 18px 4px !important; }
+  #pathshala .guest-intro > div { grid-template-columns: 100px 1fr !important; }
+}
