@@ -1215,3 +1215,18 @@
   #pathshala .learning-grid article { grid-template-columns: 1fr !important; gap: 7px !important; padding: 18px 4px !important; }
   #pathshala .guest-intro > div { grid-template-columns: 100px 1fr !important; }
 }
+
+
+/* Match the hero composition exactly: heading and copy first, feature panel second */
+#safar .series-hero,
+#pathshala .series-hero {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr) !important;
+}
+#safar .series-copy { order: 1 !important; }
+#safar .series-visual { order: 2 !important; }
+#pathshala .series-copy { order: 1 !important; }
+#pathshala .guest-intro { order: 2 !important; }
+@media (max-width: 850px) {
+  #safar .series-copy, #pathshala .series-copy { order: 1 !important; }
+  #safar .series-visual, #pathshala .guest-intro { order: 2 !important; }
+}
