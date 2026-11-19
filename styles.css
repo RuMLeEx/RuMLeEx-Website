@@ -1230,3 +1230,90 @@
   #safar .series-copy, #pathshala .series-copy { order: 1 !important; }
   #safar .series-visual, #pathshala .guest-intro { order: 2 !important; }
 }
+
+
+/* Same framed hero panel for both pillars; only the central word and captions change */
+#safar .series-visual,
+#pathshala .series-visual {
+  min-height: 430px !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  padding: 34px !important;
+  border: 1px solid #594827 !important;
+  background: radial-gradient(ellipse at 50% 45%, #4c371b, #17120b 47%, #090908 78%) !important;
+}
+#safar .series-visual::before,
+#safar .series-visual::after,
+#pathshala .series-visual::before,
+#pathshala .series-visual::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 48% !important;
+  width: min(78%, 430px) !important;
+  aspect-ratio: 1 !important;
+  border: 1px solid #c8a45a55 !important;
+  border-radius: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none !important;
+}
+#safar .series-visual::after,
+#pathshala .series-visual::after {
+  width: min(98%, 540px) !important;
+  opacity: .45 !important;
+}
+#safar .series-overline,
+#safar .series-visual-foot,
+#pathshala .series-overline,
+#pathshala .series-visual-foot {
+  position: absolute !important;
+  z-index: 1 !important;
+  left: 22px !important;
+  right: 22px !important;
+  color: #e1c98f !important;
+  font-size: 8px !important;
+  letter-spacing: .18em !important;
+}
+#safar .series-overline,
+#pathshala .series-overline { top: 23px !important; }
+#safar .series-visual-foot,
+#pathshala .series-visual-foot { bottom: 23px !important; text-align: center !important; }
+#safar .safar-word,
+#pathshala .safar-word {
+  position: relative !important;
+  z-index: 1 !important;
+  color: #e2c77f !important;
+  font: 700 clamp(76px, 11vw, 138px)/1 "Noto Serif Devanagari", "Noto Serif", Georgia, serif !important;
+  text-shadow: 0 8px 40px #0009 !important;
+}
+#pathshala .pathshala-word { font-size: clamp(54px, 7vw, 92px) !important; }
+#safar .journey-line,
+#pathshala .journey-line {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  width: 78% !important;
+  margin-top: 30px !important;
+  color: #f1dfb8 !important;
+  font-size: 10px !important;
+}
+#safar .journey-line i,
+#pathshala .journey-line i { height: 1px !important; flex: 1 !important; background: #c8a45a !important; }
+@media (max-width: 850px) {
+  #safar .series-visual,
+  #pathshala .series-visual { min-height: 360px !important; }
+}
+@media (max-width: 520px) {
+  #safar .series-visual,
+  #pathshala .series-visual { min-height: 290px !important; padding: 20px !important; }
+  #safar .journey-line,
+  #pathshala .journey-line { width: 88% !important; gap: 6px !important; font-size: 8px !important; }
+  #pathshala .pathshala-word { font-size: clamp(42px, 10vw, 64px) !important; }
+}
