@@ -1629,3 +1629,19 @@
   #safar .safar-archive-grid,
   #pathshala .pathshala-videos { grid-template-columns: 1fr !important; }
 }
+
+
+/* Brand-first identity for the three RuMLeEx pillars */
+.pillars-brand{text-align:center;margin:34px auto 0}
+.pillars-wordmark{margin:0;font:700 clamp(42px,6vw,68px)/1.05 "DM Sans",sans-serif;letter-spacing:-.055em}
+.pillars-wordmark .word-ru{color:#e4b64f}
+.pillars-wordmark .word-m{color:#f4f0e8}
+.pillars-wordmark .word-le{color:#c9a56a}
+.pillars-wordmark .word-ex{color:#f4f0e8}
+.pillars-brand>p{margin:13px 0 0;color:#b9a77f;font-size:9px;letter-spacing:.24em}
+.pillar-grid{margin-top:34px}
+.pillar h3{font-weight:600}
+.pillar:nth-child(1) h3,.pillar:nth-child(1) .pillar-icon{color:#e4b64f}
+.pillar:nth-child(2) h3,.pillar:nth-child(2) .pillar-icon{color:#eee7d9}
+.pillar:nth-child(3) h3,.pillar:nth-child(3) .pillar-icon{color:#c9a56a}
+@media(max-width:600px){.pillars-brand{margin-top:26px}.pillars-brand>p{font-size:8px;letter-spacing:.16em}.pillar-grid{margin-top:26px}}
