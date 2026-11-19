@@ -1559,3 +1559,73 @@
   #safar .focus-list article,
   #pathshala .learning-grid article { grid-template-columns: 1fr !important; gap: 6px; padding: 16px 4px !important; }
 }
+
+
+/* SAFAR + PATHSHALA — enforce identical episode-card composition */
+#safar .safar-archive-grid,
+#pathshala .pathshala-videos {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  gap: 22px !important;
+}
+#safar .safar-archive-grid > a.safar-episode,
+#pathshala .pathshala-videos > a.episode-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid var(--rx-rule, #403522) !important;
+  background: var(--rx-panel, #11100e) !important;
+}
+#safar .safar-archive-grid > a.safar-episode > img,
+#pathshala .pathshala-videos > a.episode-card > img {
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover !important;
+}
+#safar .safar-archive-grid > a.safar-episode > span,
+#pathshala .pathshala-videos > a.episode-card > .episode-card-copy {
+  display: flex !important;
+  flex: 1 0 auto !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  width: 100% !important;
+  min-height: 124px !important;
+  padding: 16px 18px !important;
+  text-align: left !important;
+}
+#safar .safar-archive-grid > a.safar-episode strong,
+#pathshala .pathshala-videos > a.episode-card strong {
+  display: block !important;
+  margin: 0 !important;
+  color: var(--rx-cream, #f4f0e8) !important;
+  font: 500 19px/1.35 "Playfair Display", serif !important;
+}
+#safar .safar-archive-grid > a.safar-episode small,
+#pathshala .pathshala-videos > a.episode-card small,
+#pathshala .pathshala-videos > a.episode-card .episode-card-copy > span {
+  display: block !important;
+  color: var(--rx-muted, #aaa397) !important;
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+}
+#safar .safar-archive-grid > a.safar-episode:hover,
+#pathshala .pathshala-videos > a.episode-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--rx-gold, #c8a45a) !important;
+}
+@media (max-width: 850px) {
+  #safar .safar-archive-grid,
+  #pathshala .pathshala-videos { grid-template-columns: 1fr !important; }
+}
