@@ -7,9 +7,9 @@ function setupRuMLeExFeedback() {
   let access = ss.getSheetByName(ACCESS_TAB) || ss.insertSheet(ACCESS_TAB);
   let responses = ss.getSheetByName(RESPONSE_TAB) || ss.insertSheet(RESPONSE_TAB);
   if (access.getLastRow() === 0) access.appendRow(["AccessCode","GuestName","Episode","Active","Used","CreatedAt"]);
-  if (responses.getLastRow() === 0) responses.appendRow(["SubmittedAt","GuestName","Profession","Episode","ReleaseDate","AccessCode","PrimaryReason","Expectations","ExpectationsOther","ExperienceRatings","AppreciatedMost","InterviewImprovements","Watched","Shared","AudienceResponses","ExpectationsMet","ExpectationsExplanation","Expected","Received","ValuableOutcome","Missing","ContentRatings","Representation","RepresentationComments","Suggestion1","Suggestion2","Suggestion3","SupportRequested","Recommend","Collaborate","OneChange","AdditionalFeedback"]);
+  if (responses.getLastRow() === 0) responses.appendRow(["SubmittedAt","GuestName","Profession","Episode","ReleaseDate","AccessCode","PrimaryReason","Expectations","ExpectationsOther","ExperienceRating_1","ExperienceRating_2","ExperienceRating_3","ExperienceRating_4","ExperienceRating_5","ExperienceRating_6","ExperienceRating_7","AppreciatedMost","InterviewImprovements","Watched","Shared","AudienceResponses","ExpectationsMet","ExpectationsExplanation","Expected","Received","ValuableOutcome","Missing","ContentRating_1","ContentRating_2","ContentRating_3","ContentRating_4","ContentRating_5","Representation","RepresentationComments","Suggestion1","Suggestion2","Suggestion3","SupportRequested","Recommend","Collaborate","OneChange","AdditionalFeedback"]);
   access.setFrozenRows(1); responses.setFrozenRows(1);
-  access.autoResizeColumns(1,6); responses.autoResizeColumns(1,32);
+  access.autoResizeColumns(1,6); responses.autoResizeColumns(1,42);
 }
 function doGet(e) {
   const callback = (e.parameter.callback || "").replace(/[^a-zA-Z0-9_$]/g, "");
