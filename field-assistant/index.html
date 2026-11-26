@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RuMLeEx Field Assistant</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0c0e;--panel:#15171b;--line:#30343b;--gold:#d8b46a;--muted:#a6abb4;--white:#f4f1e9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--white);font:15px/1.5 system-ui,sans-serif}.wrap{max-width:960px;margin:auto;padding:22px 16px}header{border-bottom:1px solid var(--line);background:#121316}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:.16em;font-weight:700}h1{font-size:clamp(27px,5vw,40px);margin:5px 0}h1 span{color:var(--gold)}p{color:var(--muted)}.panel{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:18px;margin:14px 0}button{background:var(--gold);color:#17130b;border:0;border-radius:9px;padding:11px 15px;font-weight:750;cursor:pointer;margin:5px 6px 5px 0}button.secondary{background:#22262c;color:var(--white);border:1px solid var(--line)}input,textarea,select{width:100%;background:#0e1013;border:1px solid var(--line);border-radius:9px;color:var(--white);padding:11px;font:inherit;margin:5px 0 12px}label{display:block;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.tabs button.active{background:var(--gold);color:#17130b}.item{border:1px solid var(--line);border-radius:10px;padding:12px;margin:8px 0}.hidden{display:none!important}.notice{border-left:3px solid var(--gold);padding:10px 13px;background:#1a1915;color:#e8dfc9}.status{color:var(--gold)}@media(max-width:650px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="eyebrow">PRIVATE WORKSPACE · FIELD OPERATIONS</div><h1>RuMLeEx <span>Field Assistant</span></h1><p>Meet people. Capture stories. Keep relationships moving.</p></div></header>
+<main class="wrap">
+<section id="login" class="panel"><h2>Private sign-in</h2><p>Sign in with the authorised Google account to open your workspace.</p><button id="signIn">Continue with Google</button><p id="status" class="status">Firebase setup is required before sign-in can work.</p></section>
+<section id="app" class="hidden">
+<div class="panel"><span id="who" class="status"></span> <button class="secondary" id="signOut">Sign out</button>
+<div class="tabs"><button class="active" data-tab="visits">Visit Desk</button><button class="secondary" data-tab="interview">Interview Prep</button><button class="secondary" data-tab="content">Content Desk</button><button class="secondary" data-tab="connections">Connections</button></div></div>
+<section id="visits" class="tabbody">
+<div class="panel"><h2>Record a field visit</h2><div class="grid"><label>Guest / person<input id="guest"></label><label>Institution / event<input id="place"></label><label>Locality / city<input id="city"></label><label>Visit date<input id="date" type="date"></label></div><label>Purpose and observations<textarea id="purpose"></textarea></label><button id="saveVisit">Save visit</button></div><div class="panel"><h2>Saved visits</h2><div id="visitList">No visits yet.</div></div>
+</section>
+<section id="interview" class="tabbody hidden"><div class="panel"><h2>Interview preparation</h2><div class="grid"><label>Guest profession<input id="profession" placeholder="Boxing coach, entrepreneur..."></label><label>Interview angle<input id="angle" placeholder="Journey, discipline, setbacks..."></label></div><label>What do you already know?<textarea id="known"></textarea></label><button id="makeQuestions">Build question framework</button><pre id="questions" class="item">Your questions will appear here.</pre><h3>Root Question method</h3><label>Root question<textarea id="rootQ"></textarea></label><button id="makeVariants" class="secondary">Create five adaptations</button><pre id="variants" class="item"></pre></div></section>
+<section id="content" class="tabbody hidden"><div class="panel"><h2>Content Desk</h2><label>What happened? Use verified details only.<textarea id="story"></textarea></label><label>Format<select id="format"><option>YouTube Community</option><option>YouTube Short</option><option>Instagram</option><option>Guest thank-you</option></select></label><button id="makePost">Draft content</button><pre id="post" class="item"></pre><button class="secondary" id="copy">Copy draft</button></div></section>
+<section id="connections" class="tabbody hidden"><div class="panel"><h2>Add a connection</h2><div class="grid"><label>Name<input id="cname"></label><label>Role / organisation<input id="role"></label><label>City<input id="ccity"></label><label>Follow-up date<input id="follow" type="date"></label></div><label>How you met and next step<textarea id="note"></textarea></label><button id="saveContact">Save connection</button></div><div class="panel"><h2>Connections</h2><div id="contactList">No connections yet.</div></div></section>
+</section>
+</main>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+// SET THESE VALUES from Firebase Console > Project settings > Your apps.
+const firebaseConfig = { apiKey:"YOUR_API_KEY", authDomain:"YOUR_PROJECT.firebaseapp.com", projectId:"YOUR_PROJECT_ID", appId:"YOUR_APP_ID" };
+// Replace with the one Google account allowed to use this private workspace.
+const ADMIN_EMAIL = "YOUR_GOOGLE_EMAIL@gmail.com";
+const statusEl=document.getElementById("status");
+const configured=Object.values(firebaseConfig).every(v=>v && !String(v).startsWith("YOUR_")) && !ADMIN_EMAIL.includes("YOUR_");
+let auth,db;
+if(configured){const app=initializeApp(firebaseConfig);auth=getAuth(app);db=getFirestore(app);}
+const $=id=>document.getElementById(id);
+$("signIn").onclick=async()=>{if(!configured){statusEl.textContent="Setup needed: add your Firebase web-app config and authorised Google email in this file, then deploy Firestore rules.";return;}try{await signInWithPopup(auth,new GoogleAuthProvider());}catch(e){statusEl.textContent=e.message;}};
+$("signOut").onclick=()=>signOut(auth);
+function showTab(id){document.querySelectorAll(".tabbody").forEach(x=>x.classList.toggle("hidden",x.id!==id));document.querySelectorAll(".tabs button").forEach(x=>{x.classList.toggle("active",x.dataset.tab===id);x.classList.toggle("secondary",x.dataset.tab!==id);});}
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
+const userCol=(name)=>collection(db,"users",auth.currentUser.uid,name);
+async function save(name,data){await addDoc(userCol(name),{...data,createdAt:serverTimestamp()});}
+async function render(name,target,fields){const snap=await getDocs(query(userCol(name),orderBy("createdAt","desc")));$(target).innerHTML=snap.empty?"No records yet.":snap.docs.map(d=>{const x=d.data();return '<div class="item"><strong>'+fields.map(k=>safe(x[k])).filter(Boolean).join(" · ")+'</strong><div>'+safe(x.note||x.purpose||"")+'</div></div>';}).join("");}
+function safe(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+$("saveVisit").onclick=async()=>{try{await save("visits",{guest:$("guest").value,place:$("place").value,city:$("city").value,date:$("date").value,purpose:$("purpose").value});$("guest").value=$("place").value=$("city").value=$("date").value=$("purpose").value="";await render("visits","visitList",["guest","place","city","date"]);}catch(e){alert(e.message);}};
+$("saveContact").onclick=async()=>{try{await save("connections",{name:$("cname").value,role:$("role").value,city:$("ccity").value,follow:$("follow").value,note:$("note").value});await render("connections","contactList",["name","role","city","follow"]);}catch(e){alert(e.message);}};
+$("makeQuestions").onclick=()=>{const p=$("profession").value||"guest",a=$("angle").value||"their journey";$("questions").textContent=[`1. What first drew you to ${p}?`,"2. What has been the most defining moment in your journey?","3. What difficulty do outsiders rarely understand?",`4. How has your approach to ${a} changed?`,"5. What do people misunderstand about your work?","6. What did a setback teach you?","7. What advice would you give someone entering this field?","8. What are you working towards next?"].join("\n\n")+($("known").value?"\n\nContext to verify: "+$("known").value:"");};
+$("makeVariants").onclick=()=>{const q=$("rootQ").value.trim();$("variants").textContent=q?["Professional: "+q,"Conversational: I want to understand this better — "+q,"Simple: "+q,"Short: "+q.replace(/[?]$/,""),"Reflective: Looking back on your experience, "+q.charAt(0).toLowerCase()+q.slice(1)].join("\n\n"):"Enter a root question first.";};
+$("makePost").onclick=()=>{const s=$("story").value.trim(),f=$("format").value;$("post").textContent=!s?"Add the real details first.":f==="Guest thank-you"?"Thank you for welcoming RuMLeEx. I appreciated the opportunity to learn about your work. "+s:f==="YouTube Short"?s+"\n\nA moment from the journey. #RuMLeEx":s+"\n\nPeople, perspectives and stories worth exploring. — RuMLeEx";};
+$("copy").onclick=()=>navigator.clipboard?.writeText($("post").textContent);
+if(configured)onAuthStateChanged(auth,async user=>{if(user&&user.email?.toLowerCase()===ADMIN_EMAIL.toLowerCase()){$("login").classList.add("hidden");$("app").classList.remove("hidden");$("who").textContent="Signed in: "+user.email;try{await render("visits","visitList",["guest","place","city","date"]);await render("connections","contactList",["name","role","city","follow"]);}catch(e){statusEl.textContent=e.message;}}else{if(user)await signOut(auth);$("login").classList.remove("hidden");$("app").classList.add("hidden");statusEl.textContent=user?"This Google account is not authorised.":"Sign in with your authorised Google account."; }});
+</script>
+</body></html>
