@@ -1738,3 +1738,24 @@ main > section.section + section.section { margin-top: 0; }
     background-image: linear-gradient(180deg, rgba(8,8,8,.72) 0%, rgba(8,8,8,.40) 65%, rgba(8,8,8,.16) 100%), url("assets/safar-hero-bg.svg");
   }
 }
+
+
+/* Final hero correction: the SAFAR image is the hero background, not a side illustration */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  background-size: cover;
+  background-position: center center;
+}
+.hero-art {
+  display: none !important;
+}
+.hero-copy {
+  max-width: 620px;
+}
+@media (max-width: 850px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    background-position: 58% center;
+  }
+}
