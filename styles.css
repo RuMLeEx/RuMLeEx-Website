@@ -1750,3 +1750,31 @@ main > section.section + section.section { margin-top: 0; }
       url("assets/safar-hero-bg.svg") !important;
   }
 }
+
+
+/* SAFAR: reveal the cave-to-light artwork behind the whole pillar section */
+#safar.series-section {
+  background-image:
+    linear-gradient(rgba(5,5,5,.68), rgba(5,5,5,.78)),
+    url("/RuMLeEx-Website/assets/safar-hero-bg.svg") !important;
+  background-size: cover !important;
+  background-position: center 42% !important;
+  background-repeat: no-repeat !important;
+}
+#safar .series-visual {
+  background: rgba(8,8,8,.34) !important;
+  border: 1px solid rgba(185,154,104,.22) !important;
+  box-shadow: none !important;
+}
+#safar .series-visual::before,
+#safar .series-visual::after {
+  display: none !important;
+}
+@media (max-width: 850px) {
+  #safar.series-section {
+    background-image:
+      linear-gradient(rgba(5,5,5,.70), rgba(5,5,5,.82)),
+      url("/RuMLeEx-Website/assets/safar-hero-bg.svg") !important;
+    background-position: 60% center !important;
+  }
+}
