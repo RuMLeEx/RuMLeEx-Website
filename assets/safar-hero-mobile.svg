@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1600" preserveAspectRatio="xMidYMid slice">
+<defs>
+  <linearGradient id="cave" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080b0e"/><stop offset=".52" stop-color="#171c22"/><stop offset="1" stop-color="#07090c"/></linearGradient>
+  <linearGradient id="opening" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d6dce0"/><stop offset=".48" stop-color="#87939d"/><stop offset="1" stop-color="#343b42"/></linearGradient>
+  <linearGradient id="trail" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b6a184"/><stop offset="1" stop-color="#343b40"/></linearGradient>
+  <radialGradient id="glow"><stop stop-color="#f3e8d2" stop-opacity=".92"/><stop offset=".36" stop-color="#d7dfe4" stop-opacity=".42"/><stop offset="1" stop-color="#aab7c1" stop-opacity="0"/></radialGradient>
+  <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#05080b" stop-opacity=".5"/><stop offset=".5" stop-color="#070b10" stop-opacity=".06"/><stop offset="1" stop-color="#05080b" stop-opacity=".56"/></linearGradient>
+</defs>
+<rect width="900" height="1600" fill="url(#cave)"/>
+<!-- distant opening -->
+<path d="M220 0H700Q810 100 760 310Q720 480 590 580H300Q160 470 140 300Q110 120 220 0Z" fill="url(#opening)" opacity=".92"/>
+<ellipse cx="455" cy="290" rx="280" ry="310" fill="url(#glow)"/>
+<circle cx="465" cy="255" r="58" fill="#e7e9e7" opacity=".72"/>
+<!-- cave ceiling and side walls -->
+<path d="M0 0H300Q210 180 280 370Q340 540 250 720Q170 920 0 1020Z" fill="#090d11"/>
+<path d="M900 0H620Q710 180 640 370Q570 550 680 760Q790 940 900 1040Z" fill="#090d11"/>
+<path d="M0 0Q170 40 270 190Q360 330 330 500Q290 700 150 850L0 990Z" fill="#171a1d" opacity=".9"/>
+<path d="M900 0Q730 40 630 190Q540 330 570 500Q610 700 750 850L900 990Z" fill="#171a1d" opacity=".9"/>
+<!-- distant ridges -->
+<path d="M120 590L250 500 330 550 420 465 520 540 650 470 790 590V800H120Z" fill="#30383e"/>
+<path d="M80 700L230 610 330 660 455 575 575 655 700 590 830 700V900H80Z" fill="#20272d"/>
+<!-- valley floor -->
+<path d="M0 850Q190 760 330 850Q450 930 590 830Q740 740 900 850V1600H0Z" fill="#0b1014"/>
+<path d="M0 1120Q200 950 350 1060Q520 1190 670 1010Q790 890 900 960V1600H0Z" fill="#11171c"/>
+<!-- winding path leading from foreground to opening -->
+<path d="M260 1600Q310 1420 420 1290Q540 1150 470 1040Q400 930 490 820Q565 720 470 620L535 590Q660 760 565 890Q475 1010 555 1110Q640 1230 500 1370Q410 1480 430 1600Z" fill="url(#trail)"/>
+<path d="M290 1600Q345 1425 450 1305Q555 1180 490 1060Q425 950 515 830Q585 735 505 625" fill="none" stroke="#c0c5c8" stroke-width="9" opacity=".42"/>
+<path d="M430 1600Q445 1470 530 1360Q655 1200 570 1090Q490 980 575 865Q650 760 535 600" fill="none" stroke="#8d989f" stroke-width="7" opacity=".35"/>
+<!-- foreground rocks -->
+<g fill="#20272d" stroke="#3a444d" stroke-width="5">
+ <path d="M0 1300L120 1190 220 1230 260 1430 160 1600H0Z"/>
+ <path d="M900 1260L790 1160 700 1230 670 1430 770 1600H900Z"/>
+ <path d="M90 1030L170 960 235 1000 220 1090 120 1120Z"/>
+ <path d="M810 1010L730 940 665 985 680 1080 780 1110Z"/>
+</g>
+<!-- lone traveller -->
+<g transform="translate(500 590)" fill="#10161b">
+ <circle cy="-24" r="12"/>
+ <path d="M-11 -8Q0 -17 11 -8L17 42 8 48 4 20 2 78 -7 78 -6 20 -17 48 -25 42Z"/>
+ <path d="M-17 0L-35 32 -28 38 -10 15Z"/>
+</g>
+<rect width="900" height="1600" fill="url(#shade)"/>
+</svg>
