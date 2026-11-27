@@ -1813,3 +1813,56 @@ main > section.section + section.section { margin-top: 0; }
       url("/RuMLeEx-Website/assets/safar-hero-bg.svg") 60% center / cover no-repeat !important;
   }
 }
+
+
+/* SAFAR colour balance: match RuMLeEx charcoal, ivory and antique-gold palette */
+#safar.series-section::before {
+  background:
+    linear-gradient(90deg, rgba(7,7,7,.72) 0%, rgba(7,7,7,.52) 52%, rgba(7,7,7,.66) 100%),
+    url("/RuMLeEx-Website/assets/safar-hero-bg.svg") center 42% / cover no-repeat !important;
+  filter: saturate(.72) contrast(.96) brightness(.86) !important;
+}
+#safar.series-section {
+  background-color: #090909 !important;
+  color: #f4f0e8 !important;
+}
+#safar .series-visual {
+  background: linear-gradient(145deg, rgba(12,12,12,.58), rgba(8,8,8,.46)) !important;
+  border-color: rgba(200,164,90,.30) !important;
+}
+#safar .series-overline,
+#safar .series-visual-foot,
+#safar .journey-line,
+#safar .journey-line i,
+#safar .series-copy .series-brand-label,
+#safar .section-kicker {
+  color: #c8a45a !important;
+}
+#safar .series-copy h2,
+#safar .focus-heading h3 {
+  color: #f4f0e8 !important;
+}
+#safar .series-copy h2 em {
+  color: #c8a45a !important;
+}
+#safar .series-copy p,
+#safar .focus-heading p,
+#safar .focus-list p,
+#safar .safar-focus-note span {
+  color: #bdb7ab !important;
+}
+#safar .focus-list h4,
+#safar .safar-focus-note p {
+  color: #d6bd83 !important;
+}
+#safar .safar-focus-note {
+  background: rgba(17,16,14,.82) !important;
+  border-color: rgba(200,164,90,.28) !important;
+}
+@media (max-width: 850px) {
+  #safar.series-section::before {
+    background:
+      linear-gradient(rgba(7,7,7,.72), rgba(7,7,7,.80)),
+      url("/RuMLeEx-Website/assets/safar-hero-bg.svg") 60% center / cover no-repeat !important;
+  }
+}
