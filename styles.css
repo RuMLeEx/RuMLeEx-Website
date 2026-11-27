@@ -1908,3 +1908,27 @@ main > section.section + section.section { margin-top: 0; }
     background-position: 60% center !important;
   }
 }
+
+
+/* SAFAR palette revision: cool graphite, slate and soft ivory light */
+#safar.series-section::before {
+  background-image:
+    linear-gradient(90deg, rgba(5,8,12,.76) 0%, rgba(7,10,14,.56) 50%, rgba(5,8,12,.74) 100%),
+    url("https://rumleex.github.io/RuMLeEx-Website/assets/safar-hero-bg.svg") !important;
+  filter: saturate(.58) hue-rotate(8deg) brightness(.88) contrast(.98) !important;
+}
+#safar .series-visual {
+  background: rgba(9,12,16,.34) !important;
+  border-color: rgba(174,184,193,.26) !important;
+}
+#safar .series-overline,
+#safar .series-visual-foot,
+#safar .journey-line,
+#safar .journey-line i {
+  color: #b8c1c9 !important;
+}
+#safar .series-copy h2 em,
+#safar .series-copy .series-brand-label,
+#safar .focus-list h4 {
+  color: #c8a45a !important;
+}
