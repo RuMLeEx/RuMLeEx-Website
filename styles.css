@@ -1778,3 +1778,38 @@ main > section.section + section.section { margin-top: 0; }
     background-position: 60% center !important;
   }
 }
+
+
+/* SAFAR visible image layer: place above section paint, below all content */
+#safar.series-section {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  background: #090909 !important;
+}
+#safar.series-section::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  display: block !important;
+  background:
+    linear-gradient(90deg, rgba(7,7,7,.76), rgba(7,7,7,.48) 55%, rgba(7,7,7,.66)),
+    url("/RuMLeEx-Website/assets/safar-hero-bg.svg") center 42% / cover no-repeat !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+}
+#safar.series-section > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+#safar .series-visual {
+  background: rgba(8,8,8,.28) !important;
+}
+@media (max-width: 850px) {
+  #safar.series-section::before {
+    background:
+      linear-gradient(rgba(7,7,7,.68), rgba(7,7,7,.78)),
+      url("/RuMLeEx-Website/assets/safar-hero-bg.svg") 60% center / cover no-repeat !important;
+  }
+}
