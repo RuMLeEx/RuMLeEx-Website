@@ -25,7 +25,7 @@
 </main>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithRedirect, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 // SET THESE VALUES from Firebase Console > Project settings > Your apps.
@@ -39,6 +39,7 @@ if(configured){const app=initializeApp(firebaseConfig);auth=getAuth(app);db=getF
 const $=id=>document.getElementById(id);
 $("signIn").onclick=async()=>{if(!configured){statusEl.textContent="Setup needed: add your Firebase web-app config and authorised Google email in this file, then deploy Firestore rules.";return;}try{await signInWithRedirect(auth,new GoogleAuthProvider());}catch(e){statusEl.textContent=e.message;}};
 $("signOut").onclick=()=>signOut(auth);
+if(configured){getRedirectResult(auth).catch(e=>{statusEl.textContent="Google sign-in failed: "+(e.code||"unknown")+" — "+e.message;});}
 function showTab(id){document.querySelectorAll(".tabbody").forEach(x=>x.classList.toggle("hidden",x.id!==id));document.querySelectorAll(".tabs button").forEach(x=>{x.classList.toggle("active",x.dataset.tab===id);x.classList.toggle("secondary",x.dataset.tab!==id);});}
 document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
 const userCol=(name)=>collection(db,"users",auth.currentUser.uid,name);
