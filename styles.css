@@ -2445,3 +2445,47 @@ html, body { background: #242722 !important; color: #e1ddd2 !important; }
 @media (max-width: 600px) {
   .hero-art { height: 230px !important; background-position: 38% center !important; }
 }
+
+
+/* Second photographic message banner */
+.message-banner {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 64px 7vw;
+  background: #242722;
+  isolation: isolate;
+}
+.message-banner-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("https://images.unsplash.com/photo-1774015671050-2a90b0290861?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000");
+  background-size: cover;
+  background-position: center 52%;
+}
+.message-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(18,22,18,.88), rgba(18,22,18,.55) 58%, rgba(18,22,18,.12));
+}
+.message-banner-copy { max-width: 760px; }
+.message-banner-copy .eyebrow { color: #e0b98e !important; }
+.message-banner-copy h2 {
+  margin: 18px 0 14px;
+  color: #f3eee3 !important;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.15;
+}
+.message-banner-copy h2 em { color: #e0b98e !important; }
+.message-banner-copy p { color: #f0e9dc; font-size: 17px; }
+@media (max-width: 600px) {
+  .message-banner { min-height: 330px; padding: 42px 6vw; }
+  .message-banner-copy h2 { font-size: 34px; }
+  .message-banner-copy p { font-size: 15px; }
+}
