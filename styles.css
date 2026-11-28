@@ -2334,3 +2334,45 @@ html, body { background: #242722 !important; color: #e1ddd2 !important; }
 @media (prefers-reduced-motion: no-preference) {
   html { color-scheme: dark; }
 }
+
+
+/* Mobile-first readability and layout for phones, including desktop-site viewports */
+@media (max-width: 1100px) {
+  .site-header { height: 72px !important; padding: 0 5vw !important; }
+  .menu-toggle { display: block !important; font-size: 28px !important; }
+  .nav { display: none !important; position: absolute !important; top: 71px !important; left: 0 !important; right: 0 !important; padding: 22px 6vw !important; background: #252923 !important; flex-direction: column !important; align-items: flex-start !important; gap: 18px !important; font-size: 17px !important; border-bottom: 1px solid #55584c !important; }
+  .nav.open { display: flex !important; }
+  .hero { grid-template-columns: 1fr !important; padding: 58px 7vw 28px !important; }
+  .hero-copy { max-width: 760px !important; }
+  .hero-art { justify-self: start !important; margin-top: 36px !important; width: 100% !important; max-width: 680px !important; }
+  .hero-bottom { gap: 12px !important; flex-wrap: wrap !important; margin-top: 34px !important; }
+  .section { padding: 58px 7vw !important; }
+  .intro-grid, .services-grid, .store-grid, .explore-heading { grid-template-columns: 1fr !important; display: grid !important; gap: 22px !important; }
+  .pillar-grid, .explore-cards, .pathshala-videos, .safar-archive-grid { grid-template-columns: 1fr !important; }
+  .pillar { min-height: 0 !important; }
+  .series-hero { grid-template-columns: 1fr !important; display: grid !important; gap: 28px !important; }
+  .series-visual { min-height: 270px !important; }
+  .focus-list, .learning-grid { grid-template-columns: 1fr !important; }
+  .safar-block-heading { display: flex !important; flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
+  .safar-episode, .episode-card { width: 100% !important; }
+  .hero h1 { font-size: clamp(42px, 8vw, 66px) !important; letter-spacing: -1.5px !important; }
+  .section h2, .contact-section h2 { font-size: clamp(34px, 6vw, 52px) !important; }
+  .hero-lede, .intro-grid p, .series-copy p, .focus-heading p, .focus-list p, .learning-grid p, .explore-heading p, .explore-card p, .services-grid p, .store-grid p, .store-items p, .contact-section p { font-size: 17px !important; line-height: 1.75 !important; }
+  .focus-list h4, .learning-grid h4 { font-size: 18px !important; }
+  .eyebrow, .section-kicker { font-size: 12px !important; letter-spacing: .13em !important; }
+  .safar-episode strong, .episode-card strong { font-size: 18px !important; }
+  .safar-episode small, .episode-card small, .episode-card-copy > span { font-size: 14px !important; }
+  .footer-bottom { font-size: 12px !important; }
+}
+@media (max-width: 600px) {
+  .announcement { min-height: 34px !important; height: auto !important; padding: 7px 12px !important; text-align: center !important; font-size: 9px !important; }
+  .brand-logo { width: 48px !important; height: 48px !important; }
+  .hero { padding-top: 42px !important; }
+  .hero-art { height: 270px !important; }
+  .hero-actions { align-items: flex-start !important; flex-direction: column !important; gap: 16px !important; }
+  .hero-bottom { font-size: 9px !important; }
+  .section { padding: 48px 6vw !important; }
+  .hero-lede, .intro-grid p, .series-copy p, .focus-heading p, .focus-list p, .learning-grid p, .explore-heading p, .explore-card p, .services-grid p, .store-grid p, .store-items p, .contact-section p, .pillar p { font-size: 16px !important; }
+  .safar-episode strong, .episode-card strong { font-size: 17px !important; }
+  .footer { padding-left: 6vw !important; padding-right: 6vw !important; }
+}
