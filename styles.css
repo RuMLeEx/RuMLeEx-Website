@@ -2239,3 +2239,98 @@ body { line-height: 1.7; }
   .safar-episode small, .episode-card-copy > span { font-size: 13px; }
   .footer-bottom { font-size: 10px; }
 }
+
+
+/* Comfortable dark earth palette — reduced screen glare */
+:root {
+  --rx-sand: #242722;
+  --rx-ivory: #2b2f29;
+  --rx-paper: #20231f;
+  --rx-olive: #e3dfd2;
+  --rx-olive-deep: #d5d0c2;
+  --rx-terracotta: #c49a78;
+  --rx-terracotta-dark: #d0a987;
+  --rx-ink: #e1ddd2;
+  --rx-muted: #b8b7ac;
+  --rx-line: #41443b;
+}
+html, body { background: #242722 !important; color: #e1ddd2 !important; }
+.announcement { background: #79614c !important; color: #f1e9dc !important; }
+.site-header, .hero, .pillars, .services-section, .pillar {
+  background: #2b2f29 !important;
+}
+.intro, #about, .feature-section, #safar.series-section,
+#pathshala.series-section, .pathshala-section, .explore-section,
+.store-section, .contact-section {
+  background: #20231f !important;
+  color: #e1ddd2 !important;
+}
+.nav, .text-link, .brand-tag { color: #d0ccbf !important; }
+.nav a:hover, .text-link:hover { color: #d5b18b !important; }
+.hero h1, .section h2, #about h2, .focus-heading h3,
+.pillar h3, .pillars-brand>p, .store-items h3,
+.service-list b, .contact-section h2 { color: #e5e0d4 !important; }
+.hero h1 em, h2 em, #about h2 em, .section h2 em { color: #c49a78 !important; }
+.hero-lede, .intro-grid p, .pillar p, .explore-heading p,
+.services-grid p, .contact-section p, .store-grid > div:first-child > p:not(.eyebrow),
+.store-items p, #safar .series-copy p, #pathshala .series-copy p,
+#safar .focus-heading p, #pathshala .focus-heading p,
+#safar .focus-list p, #pathshala .learning-grid p,
+#safar .safar-focus-note span { color: #b8b7ac !important; }
+.eyebrow, .section-kicker, .pillar-number, .pillar-icon,
+.service-list span, .service-list i { color: #c49a78 !important; }
+.button-gold { background: #98765b !important; color: #fff8ee !important; }
+.button-gold:hover { background: #ad896a !important; }
+.hero-art {
+  border-color: #626557 !important;
+  background: linear-gradient(145deg, #45483d, #292d28 75%) !important;
+}
+.sun { background: radial-gradient(circle at 40% 40%, #d3b18c, #a77e5e 65%, #72543f) !important; box-shadow: 0 0 65px #b28a6425 !important; }
+.horizon { background: linear-gradient(165deg, transparent 0 30%, #454b40 30.3% 48%, #292e28 48.3%) !important; }
+.orbit { border-color: #c4a17a55 !important; }
+.hero-art-caption, .hero-bottom, .hero-note { color: #c6c1b4 !important; }
+.pillar-grid, .service-list>div, .footer, .footer-bottom,
+.safar-archive, .safar-episode, .episode-card { border-color: #41443b !important; }
+.pillar-grid { background: #41443b !important; }
+.pillar { background: #2b2f29 !important; }
+#safar .series-visual, #pathshala .series-visual {
+  background: linear-gradient(145deg, #596453, #394238) !important;
+  border-color: #6b705f !important;
+}
+#safar .series-visual-foot, #pathshala .series-visual-foot,
+#safar .series-overline, #pathshala .series-overline,
+#safar .journey-line, #pathshala .journey-line,
+#safar .safar-word, #pathshala .safar-word { color: #f0ebdf !important; }
+#safar .series-copy h2, #pathshala .series-copy h2,
+#safar .focus-heading h3, #pathshala .focus-heading h3,
+#safar .focus-list h4, #pathshala .learning-grid h4 { color: #e3dfd2 !important; }
+#safar .safar-focus-note, #pathshala .learning-grid article,
+#safar .focus-list article {
+  background: #2b2f29 !important;
+  border-color: #41443b !important;
+}
+#safar .safar-episode, #pathshala .episode-card,
+#pathshala .pathshala-videos > a.episode-card {
+  background: #2b2f29 !important;
+}
+#safar .safar-episode strong, #pathshala .episode-card strong,
+#pathshala .episode-card-copy strong { color: #e5e0d4 !important; }
+#safar .safar-episode small, #pathshala .episode-card small,
+#pathshala .episode-card-copy span { color: #b8b7ac !important; }
+.explore-card, .explore-card.travel, .explore-card.ideas {
+  background: linear-gradient(150deg, #515b4d, #30372f 80%) !important;
+  border-color: #626858 !important;
+}
+.explore-card h3 { color: #f0ebdf !important; }
+.explore-card p { color: #d0ccbf !important; }
+.pathshala-art { background: linear-gradient(135deg, #45483d, #2c332c) !important; }
+.feature-visual { background: radial-gradient(ellipse at 50% 45%, #79634e, #485044 46%, #2a3029 78%) !important; }
+.store-items { border-color: #555347 !important; }
+.store-items article { border-color: #41443b !important; }
+.store-note, .store-items article span { color: #c4a17a !important; }
+.footer { background: #1b1e1a !important; color: #d8d3c7 !important; }
+.footer>p, .footer-bottom { color: #aaa99e !important; }
+.footer-bottom a, .arrow-link { color: #d0a987 !important; }
+@media (prefers-reduced-motion: no-preference) {
+  html { color-scheme: dark; }
+}
