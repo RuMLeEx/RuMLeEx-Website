@@ -2171,3 +2171,71 @@ html, body { background: var(--rx-sand) !important; color: var(--rx-ink) !import
 #about h2, .section h2, .focus-heading h3,
 .pillar h3, .pillars-brand>p { color: #50594d !important; }
 #about h2 em, .section h2 em { color: #a87963 !important; }
+
+
+/* Readability pass — clearer supporting text, especially on mobile */
+body { line-height: 1.7; }
+.announcement { font-size: 10px; letter-spacing: .16em; }
+.nav { font-size: 14px; gap: 26px; }
+.nav-cta { font-size: 13px; }
+.eyebrow, .section-kicker { font-size: 11px; letter-spacing: .18em; }
+.hero-lede { font-size: 17px; line-height: 1.8; }
+.hero-actions .button, .text-link { font-size: 13px; }
+.hero-note, .hero-bottom { font-size: 10px; }
+.intro-grid p, .feature-copy>p:not(.eyebrow),
+.pathshala-copy>p:not(.eyebrow), .explore-heading p,
+.services-grid p, .contact-section p,
+.store-grid > div:first-child > p:not(.eyebrow) { font-size: 15px; line-height: 1.8; }
+.intro-grid .large-copy { font-size: 21px; line-height: 1.65; }
+.pillar-number, .pillar p { font-size: 14px; line-height: 1.75; }
+.pillar-icon { font-size: 28px; }
+.visual-label, .visual-foot, .hero-art-caption { font-size: 10px; }
+.chalk-small { font-size: 12px; }
+.explore-card span { font-size: 10px; }
+.explore-card p { font-size: 14px; line-height: 1.7; }
+.service-list>div { font-size: 14px; }
+.service-list span { font-size: 12px; }
+.contact-section small { font-size: 12px; }
+.store-items article span, .store-note { font-size: 12px; }
+.store-items h3 { font-size: 1.35rem; }
+.store-items p { font-size: 14px; }
+.safar-episode small { font-size: 14px; line-height: 1.6; }
+.safar-episode strong { font-size: 27px; }
+#safar .safar-archive-heading > span { font-size: 11px; }
+#safar .safar-block-heading h3, #pathshala .safar-block-heading h3 { font-size: 28px; }
+#safar .focus-heading p, #pathshala .focus-heading p,
+#safar .focus-list p, #pathshala .learning-grid p,
+#safar .safar-focus-note span { font-size: 15px; line-height: 1.75; }
+#safar .focus-list h4, #pathshala .learning-grid h4 { font-size: 18px; }
+.episode-card-copy small { font-size: 11px; }
+.episode-card-copy > span { font-size: 14px; line-height: 1.6; }
+.footer>p { font-size: 17px; }
+.footer-bottom { font-size: 11px; }
+
+@media (max-width: 850px) {
+  .nav { font-size: 15px; gap: 18px; }
+  .hero-lede { font-size: 17px; }
+  .intro-grid p, .feature-copy>p:not(.eyebrow),
+  .pathshala-copy>p:not(.eyebrow), .explore-heading p,
+  .services-grid p, .contact-section p { font-size: 16px; }
+  .pillar p, .explore-card p, .store-items p { font-size: 15px; }
+  .section-kicker, .eyebrow { font-size: 11px; }
+  .footer-bottom { font-size: 11px; }
+}
+@media (max-width: 480px) {
+  .announcement { font-size: 9px; letter-spacing: .1em; }
+  .hero-lede { font-size: 16px; }
+  .hero-note, .hero-bottom { font-size: 9px; }
+  .section-kicker, .eyebrow { font-size: 10px; }
+  .intro-grid p, .feature-copy>p:not(.eyebrow),
+  .pathshala-copy>p:not(.eyebrow), .explore-heading p,
+  .services-grid p, .contact-section p { font-size: 15px; }
+  .intro-grid .large-copy { font-size: 19px; }
+  .pillar p, .explore-card p, .store-items p,
+  #safar .focus-heading p, #pathshala .focus-heading p,
+  #safar .focus-list p, #pathshala .learning-grid p,
+  #safar .safar-focus-note span { font-size: 14px; }
+  .service-list>div { font-size: 13px; }
+  .safar-episode small, .episode-card-copy > span { font-size: 13px; }
+  .footer-bottom { font-size: 10px; }
+}
