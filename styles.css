@@ -2577,3 +2577,21 @@ html { scroll-padding-top: 100px; }
   .hero-art { height: 300px; }
   .brand-tag { font-size: 10px; }
 }
+
+
+/* RuMLeEx journey-sharing philosophy */
+.journey-philosophy { background: #0b0b0a; border-top: 1px solid #302a20; }
+.journey-philosophy-heading { max-width: 850px; margin: 32px 0 48px; }
+.journey-philosophy-heading h2 { margin: 18px 0 22px; }
+.journey-philosophy-heading h2 em { color: #c8a45a; }
+.journey-intro { max-width: 650px; color: #b9b2a6; font-size: 14px; line-height: 1.9; }
+.journey-insights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #393124; border: 1px solid #393124; }
+.journey-insights article { background: #0b0b0a; min-height: 205px; padding: 27px; }
+.journey-insights article span, .journey-manifesto > span { color: #c8a45a; font-size: 9px; letter-spacing: .19em; font-weight: 700; }
+.journey-insights h3 { font: 500 25px/1.2 "Playfair Display", serif; margin: 18px 0 10px; }
+.journey-insights p { color: #aaa397; font-size: 12px; line-height: 1.8; margin: 0; }
+.journey-manifesto { margin-top: 42px; padding: 38px 5vw; border: 1px solid #5d4827; background: linear-gradient(120deg, #17130d, #0b0b0a 75%); text-align: center; }
+.journey-manifesto blockquote { max-width: 850px; margin: 18px auto; font: 500 clamp(24px, 3.5vw, 39px)/1.35 "Playfair Display", serif; color: #f0e7d5; }
+.journey-manifesto p { max-width: 620px; margin: 0 auto; color: #aaa397; font-size: 12px; line-height: 1.8; }
+@media (max-width: 850px) { .journey-insights { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .journey-insights { grid-template-columns: 1fr; } .journey-insights article { min-height: auto; padding: 23px; } .journey-manifesto { padding: 30px 22px; } }
