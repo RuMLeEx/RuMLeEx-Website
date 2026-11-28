@@ -2418,3 +2418,30 @@ html, body { background: #242722 !important; color: #e1ddd2 !important; }
   .safar-episode { padding: 12px 0 !important; }
   .footer-bottom { line-height: 1.8 !important; }
 }
+
+
+/* Replace the abstract hero illustration with one full-bleed landscape photograph */
+.hero-art {
+  background-image:
+    linear-gradient(180deg, rgba(12,17,14,.08) 35%, rgba(12,17,14,.62) 100%),
+    url("https://images.unsplash.com/photo-1767709524929-00281da4a7c1?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=1800") !important;
+  background-size: cover !important;
+  background-position: center 54% !important;
+  border: 1px solid #85765e !important;
+}
+.hero-art .orbit, .hero-art .sun, .hero-art .horizon { display: none !important; }
+.hero-art-caption {
+  z-index: 2 !important;
+  left: 18px !important; right: 18px !important; bottom: 16px !important;
+  padding: 12px 14px !important;
+  background: rgba(12,17,14,.58) !important;
+  color: #f1eadc !important;
+  backdrop-filter: blur(3px);
+}
+.hero-art-caption b { color: #e2b17f !important; }
+@media (max-width: 1100px) {
+  .hero-art { height: clamp(220px, 43vw, 360px) !important; max-width: none !important; }
+}
+@media (max-width: 600px) {
+  .hero-art { height: 230px !important; background-position: 38% center !important; }
+}
